@@ -55,6 +55,82 @@ const restaurant = {
   },
 };
 
+// /////////////////////////////////////////////////////////////////////
+// Coding Challenge #2
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+// /////////////////////////////////////////////////////////////////////
+// Coding Challenge #2
+// 1
+for (const [goal, player] of game.scored.entries()) {
+  console.log(`Goal ${goal + 1}: ${player}`);
+}
+
+// 2
+const odds = Object.values(game.odds);
+let sum = 0;
+for (const value of odds) {
+  sum += value;
+}
+console.log(sum);
+sum /= odds.length;
+console.log(sum);
+
+// 3
+for (const [team, odd] of Object.entries(game.odds)) {
+  const teamStr = team !== 'x' ? `victory ${game[team]}` : `draw`;
+  console.log(`Odd of ${teamStr}: ${odd}`);
+}
+
+// 4
+const scorers = {};
+for (const player of game.scored) {
+  scorers[player] ? ++scorers[player] : (scorers[player] = 1);
+}
+console.log(scorers);
+
+/*
+// /////////////////////////////////////////////////////////////////////
+// Looping Objects: Objects Keys, Values, and Entries
 // Property NAMES
 const properties = Object.keys(openingHours);
 console.log(properties);
@@ -76,6 +152,7 @@ const entries = Object.entries(openingHours);
 for (const [day, { open, close }] of entries) {
   console.log(`On ${day} we open at ${open} and close at ${close}`);
 }
+*/
 
 /*
 // /////////////////////////////////////////////////////////////////////
@@ -125,9 +202,6 @@ for (const [i, el] of menu.entries()) {
 
 console.log([...menu.entries()]);
 */
-
-// /////////////////////////////////////////////////////////////////////
-// Coding Challenge #1
 
 /*
 // /////////////////////////////////////////////////////////////////////
