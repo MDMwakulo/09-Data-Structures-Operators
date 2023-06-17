@@ -98,6 +98,41 @@ const game = {
   },
 };
 
+const ordersSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+
+console.log(ordersSet);
+
+console.log(new Set('Durell'));
+
+console.log(ordersSet.size);
+console.log(ordersSet.has('Pizza'));
+console.log(ordersSet.has('Bread'));
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
+ordersSet.delete('Risotto');
+// ordersSet.clear(); //delete all elements in set
+console.log(ordersSet);
+
+for (const order of ordersSet) console.log(order);
+
+// Example
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+const staffUnique = [...new Set(staff)]; // ['Waiter', 'Chef', 'Manager']
+console.log(staffUnique);
+console.log(
+  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+);
+const myName = new Set('durellmwakulomwawasi');
+console.log(myName);
+console.log(new Set('durellmwakulomwawasi').size);
+/*
 // /////////////////////////////////////////////////////////////////////
 // Coding Challenge #2
 // 1
@@ -127,6 +162,7 @@ for (const player of game.scored) {
   scorers[player] ? ++scorers[player] : (scorers[player] = 1);
 }
 console.log(scorers);
+*/
 
 /*
 // /////////////////////////////////////////////////////////////////////
