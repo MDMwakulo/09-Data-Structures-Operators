@@ -55,6 +55,40 @@ const restaurant = {
   },
 };
 
+// Coding Challenge #4
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+const textArea = document.querySelector('textarea');
+const btn = document.querySelector('button');
+
+btn.addEventListener('click', function () {
+  const content = textArea.value;
+  const words = content.split('\n');
+
+  // for (const word of words) {
+  //   const w = word.toLowerCase().trim();
+  //   const whereToSplit = w.indexOf('_');
+  //   const newWord =
+  //     w.slice(0, whereToSplit) +
+  //     w.slice(whereToSplit + 1, whereToSplit + 2).toUpperCase() +
+  //     w.slice(whereToSplit + 2);
+  //   newWord[whereToSplit].toUpperCase();
+  //   console.log(newWord);
+  // }
+
+  for (const [i, word] of words.entries()) {
+    const [first, second] = word.toLowerCase().trim().split('_');
+    const output = `${first}${second.replace(
+      second[0],
+      second[0].toUpperCase()
+    )}`;
+    console.log(`${output.padEnd(20, ' ')}${`✅`.repeat(i + 1)}`);
+  }
+});
+/*
+// /////////////////////////////////////////////////////////////////
+// Working with Strings – Part 3
 console.log(`a+very+nice+string`.split('+'));
 console.log('Durell Mwakulo Mwawasi'.split(' '));
 
@@ -75,7 +109,6 @@ const capitalizeName = function (name) {
   return console.log(newArr.join(' '));
 };
 
-// Working with Strings – Part 3
 capitalizeName('jessica ann smith davis');
 capitalizeName('durell mwakulo');
 
@@ -104,6 +137,7 @@ const planesInLine = function (n) {
 planesInLine(5);
 planesInLine(3);
 planesInLine(12);
+*/
 
 /*
 // /////////////////////////////////////////////////////////////////
