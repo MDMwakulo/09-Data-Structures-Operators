@@ -54,7 +54,67 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+// Working with Strings – Part 2
+const airline = 'TAP Air Portugal';
 
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+// Fix capitalization in name
+const passenger = 'dUrELL'; // Durell
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+// Comparing Emails
+const email = 'hello@jonas.io';
+const loginEmail = ` Hello@Jonas.Io \n`;
+
+// const lowerEmail = loginEmail.toLowerCase();
+// const trimmedEmail = lowerEmail.trim();
+
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+console.log(email === normalizedEmail);
+
+// replacing
+const priceGB = '288,97₤';
+const priceUS = priceGB.replace('₤', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement =
+  'All passengers come to boarding door 23. Boarding door 23!';
+console.log(announcement.replace('door', 'gate'));
+console.log(announcement.replaceAll('door', 'gate')); //worked in the future
+console.log(announcement.replace(/door/g, 'gate')); // using regular expression //g --> g for global
+
+// Booleans
+const plane = 'Airbus A320';
+console.log(plane.includes('A320')); // true
+console.log(plane.includes('Boeing')); // false
+console.log(plane.startsWith('Airb'));
+
+if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
+  console.log('Part of the new Airbus family');
+}
+
+// Practice exercise
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are not allowed onboard');
+  } else {
+    console.log('Welcome aboard!');
+  }
+};
+checkBaggage('I have a laptop, some Food and a pocket Knife');
+checkBaggage('Socks and camera');
+checkBaggage('Got some snacks and a gun for protection');
+
+/*
+// /////////////////////////////////////////////////////////////////////
+// Working with Strings – Part 1
 const airline = 'TAP Air Portugal';
 const plane = 'A320';
 
@@ -96,6 +156,8 @@ checkMiddleSeat('3E');
 
 console.log(new String('durell'));
 console.log(typeof new String('durell').slice(1)); //string
+*/
+
 /*
 // /////////////////////////////////////////////////////////////////////
 // Coding Challenge #3
